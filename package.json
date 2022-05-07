@@ -1,0 +1,14 @@
+{
+  "name": "cytoscape_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "KatharineME",
+  "license": "MIT",
+  "dependencies": {
+    "cytoscape": "^3.21.1"
+  }
+}
