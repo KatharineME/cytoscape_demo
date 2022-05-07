@@ -1,28 +1,30 @@
 cytoscape({
+  container: document.getElementById("cy"),
 
-  container: document.getElementById('cy'),
-
-  elements: [ // flat array of nodes and edges
-    { // node n1
-      group: 'nodes', // 'nodes' for a node, 'edges' for an edge
+  elements: [
+    // flat array of nodes and edges
+    {
+      // node n1
+      group: "nodes", // 'nodes' for a node, 'edges' for an edge
       // NB the group field can be automatically inferred for you but specifying it
       // gives you nice debug messages if you mis-init elements
 
-
-      data: { // element data (put json serialisable dev data here)
-        id: 'n1', // mandatory (string) id for each element, assigned automatically on undefined
-        parent: 'nparent', // indicates the compound node parent id; not defined => no parent
+      data: {
+        // element data (put json serialisable dev data here)
+        id: "n1", // mandatory (string) id for each element, assigned automatically on undefined
+        parent: "nparent", // indicates the compound node parent id; not defined => no parent
         // (`parent` can be effectively changed by `eles.move()`)
       },
 
       // scratchpad data (usually temp or nonserialisable data)
       scratch: {
-        _foo: 'bar' // app fields prefixed by underscore; extension fields unprefixed
+        _foo: "bar", // app fields prefixed by underscore; extension fields unprefixed
       },
 
-      position: { // the model position of the node (optional on init, mandatory after)
+      position: {
+        // the model position of the node (optional on init, mandatory after)
         x: 100,
-        y: 100
+        y: 100,
       },
 
       selected: false, // whether the element is selected (default false)
@@ -35,54 +37,58 @@ cytoscape({
 
       pannable: false, // whether dragging the node causes panning instead of grabbing
 
-      classes: ['foo', 'bar'], // an array (or a space separated string) of class names that the element has
+      classes: ["foo", "bar"], // an array (or a space separated string) of class names that the element has
 
       // DO NOT USE THE `style` FIELD UNLESS ABSOLUTELY NECESSARY
       // USE THE STYLESHEET INSTEAD
-      style: { // style property overrides 
-        'background-color': 'red'
-      }
+      style: {
+        // style property overrides
+        "background-color": "red",
+      },
     },
 
-    { // node n2
-      data: { id: 'n2' },
-      renderedPosition: { x: 200, y: 200 } // can alternatively specify position in rendered on-screen pixels
+    {
+      // node n2
+      data: { id: "n2" },
+      renderedPosition: { x: 200, y: 200 }, // can alternatively specify position in rendered on-screen pixels
     },
 
-    { // node n3
-      data: { id: 'n3', parent: 'nparent' },
-      position: { x: 123, y: 234 }
+    {
+      // node n3
+      data: { id: "n3", parent: "nparent" },
+      position: { x: 123, y: 234 },
     },
 
-    { // node nparent
-      data: { id: 'nparent' }
+    {
+      // node nparent
+      data: { id: "nparent" },
     },
 
-    { // edge e1
+    {
+      // edge e1
       data: {
-        id: 'e1',
+        id: "e1",
         // inferred as an edge because `source` and `target` are specified:
-        source: 'n1', // the source node id (edge comes from this node)
-        target: 'n2'  // the target node id (edge goes to this node)
+        source: "n1", // the source node id (edge comes from this node)
+        target: "n2", // the target node id (edge goes to this node)
         // (`source` and `target` can be effectively changed by `eles.move()`)
       },
 
-      pannable: true // whether dragging on the edge causes panning
-    }
+      pannable: true, // whether dragging on the edge causes panning
+    },
   ],
 
   layout: {
-    name: 'preset'
+    name: "preset",
   },
 
   // so we can see the ids
   style: [
     {
-      selector: 'node',
+      selector: "node",
       style: {
-        'label': 'data(id)'
-      }
-    }
-  ]
-
+        label: "data(id)",
+      },
+    },
+  ],
 });

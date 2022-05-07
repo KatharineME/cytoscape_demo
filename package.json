@@ -9,6 +9,7 @@
   "author": "KatharineME",
   "license": "MIT",
   "dependencies": {
-    "cytoscape": "^3.21.1"
+    "cytoscape": "^3.21.1",
+    "jquery": "^3.6.0"
   }
 }
